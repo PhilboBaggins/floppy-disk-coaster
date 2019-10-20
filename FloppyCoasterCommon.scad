@@ -5,7 +5,6 @@ Floppy35Thickness = 3.2;
 
 HOLE_RADIUS_FOR_M3 = 3.5 / 2;
 
-
 // https://www.digikey.com.au/products/en/hardware-fasteners-accessories/bumpers-feet-pads-grips/570?FV=69%7C400526%2C69%7C411854%2C-8%7C570&quantity=0&ColumnSort=1000011&page=1&stock=1&pageSize=25
 // https://www.digikey.com.au/product-detail/en/keystone-electronics/720/36-720-ND/61956
 KEYSTONE_720_FEET_SIZE = [12.7 / 2, 6.4]; // [radius, height]
@@ -68,9 +67,9 @@ module FloppyCoaster(diskSize, holeRadius, feetSize, cutoutForDisk)
 module StackUp(diskSize, holeRadius, feetSize)
 {
     feltThickness = 2;
-    baseThickness = Floppy35Thickness;
+    baseThickness = 1;
     diskThickness = Floppy35Thickness;
-    coverThickness = Floppy35Thickness;
+    coverThickness = 1;
 
     // Feet
     holePositions = holePositions(diskSize, feetSize);
