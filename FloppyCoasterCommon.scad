@@ -52,8 +52,8 @@ module FloppyCoaster(diskSize, holeRadius, feetSize, cutoutForDisk)
         // Cut out for disk
         if (cutoutForDisk)
         {
-            translate([feetSize[0] * 2, feetSize[0] * 2])
-            square(diskSize);
+            translate([feetSize[0] * 2 - 0.5, feetSize[0] * 2 - 0.5])
+            square(diskSize + [1, 1]);
         }
 
         // Holes for screws
