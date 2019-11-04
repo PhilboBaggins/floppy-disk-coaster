@@ -1,5 +1,5 @@
 MAIN_SOURCE_FILE := FloppyCoasterCommon.scad
-ALL := exports/stackup.stl exports/panel-with-cutout.dxf exports/panel-without-cutout.dxf
+ALL := exports/stackup.stl exports/panel-with-cutout.dxf exports/panel-without-cutout.dxf exports/panel-with-cutout.svg exports/panel-without-cutout.svg
 
 .PHONY: all clean
 
@@ -11,7 +11,13 @@ exports/stackup.stl: exports/stackup.scad ${MAIN_SOURCE_FILE}
 exports/panel-with-cutout.dxf: exports/panel-with-cutout.scad ${MAIN_SOURCE_FILE}
 	openscad -o $@ $<
 
+exports/panel-with-cutout.svg: exports/panel-with-cutout.scad ${MAIN_SOURCE_FILE}
+	openscad -o $@ $<
+
 exports/panel-without-cutout.dxf: exports/panel-without-cutout.scad ${MAIN_SOURCE_FILE}
+	openscad -o $@ $<
+
+exports/panel-without-cutout.svg: exports/panel-without-cutout.scad ${MAIN_SOURCE_FILE}
 	openscad -o $@ $<
 
 clean:
