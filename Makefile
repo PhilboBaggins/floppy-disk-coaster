@@ -4,7 +4,8 @@ ALL := \
 	exports/floppy-coaster-panel-with-cutout.dxf \
 	exports/floppy-coaster-panel-with-cutout.svg \
 	exports/floppy-coaster-panel-without-cutout.dxf \
-	exports/floppy-coaster-panel-without-cutout.svg
+	exports/floppy-coaster-panel-without-cutout.svg \
+	Bill-of-materials.pdf
 
 .PHONY: all clean
 
@@ -24,6 +25,9 @@ exports/floppy-coaster-panel-without-cutout.dxf: exports/floppy-coaster-panel-wi
 
 exports/floppy-coaster-panel-without-cutout.svg: exports/floppy-coaster-panel-without-cutout.scad ${MAIN_SOURCE_FILE}
 	openscad -o $@ $<
+
+Bill-of-materials.pdf: Bill-of-materials.ods
+	soffice --headless --convert-to pdf:writer_pdf_Export $<
 
 clean:
 	rm -f ${ALL}
