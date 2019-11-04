@@ -1,5 +1,10 @@
 MAIN_SOURCE_FILE := FloppyCoasterCommon.scad
-ALL := exports/stackup.stl exports/panel-with-cutout.dxf exports/panel-without-cutout.dxf exports/panel-with-cutout.svg exports/panel-without-cutout.svg
+ALL := \
+	exports/stackup.stl \
+	exports/panel-with-cutout.dxf \
+	exports/panel-with-cutout.svg \
+	exports/panel-without-cutout.dxf \
+	exports/panel-without-cutout.svg
 
 .PHONY: all clean
 
