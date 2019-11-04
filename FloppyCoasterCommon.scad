@@ -22,6 +22,8 @@ module MainCoasterShape(diskSize, feetSize)
 
     size = diskSize + [feetRadius * 4, feetRadius * 4];
 
+    echo(str("Coaster size: ", size));
+
     cornerX1 =           feetRadius;
     cornerX2 = size[0] - feetRadius;
     cornerY1 =           feetRadius;
