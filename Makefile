@@ -1,29 +1,30 @@
-MAIN_SOURCE_FILE := FloppyCoasterCommon.scad
+NAME := floppy-coaster
+
 ALL := \
-	exports/floppy-coaster-stackup.stl \
-	exports/floppy-coaster-panel-with-cutout.dxf \
-	exports/floppy-coaster-panel-with-cutout.svg \
-	exports/floppy-coaster-panel-without-cutout.dxf \
-	exports/floppy-coaster-panel-without-cutout.svg \
+	exports/${NAME}-stackup.stl \
+	exports/${NAME}-panel-with-cutout.dxf \
+	exports/${NAME}-panel-with-cutout.svg \
+	exports/${NAME}-panel-without-cutout.dxf \
+	exports/${NAME}-panel-without-cutout.svg \
 	Bill-of-materials.pdf
 
 .PHONY: all clean
 
 all: ${ALL}
 
-exports/floppy-coaster-stackup.stl: exports/floppy-coaster-stackup.scad ${MAIN_SOURCE_FILE}
+exports/${NAME}-stackup.stl: exports/${NAME}-stackup.scad ${NAME}.scad
 	openscad -o $@ $<
 
-exports/floppy-coaster-panel-with-cutout.dxf: exports/floppy-coaster-panel-with-cutout.scad ${MAIN_SOURCE_FILE}
+exports/${NAME}-panel-with-cutout.dxf: exports/${NAME}-panel-with-cutout.scad ${NAME}.scad
 	openscad -o $@ $<
 
-exports/floppy-coaster-panel-with-cutout.svg: exports/floppy-coaster-panel-with-cutout.scad ${MAIN_SOURCE_FILE}
+exports/${NAME}-panel-with-cutout.svg: exports/${NAME}-panel-with-cutout.scad ${NAME}.scad
 	openscad -o $@ $<
 
-exports/floppy-coaster-panel-without-cutout.dxf: exports/floppy-coaster-panel-without-cutout.scad ${MAIN_SOURCE_FILE}
+exports/${NAME}-panel-without-cutout.dxf: exports/${NAME}-panel-without-cutout.scad ${NAME}.scad
 	openscad -o $@ $<
 
-exports/floppy-coaster-panel-without-cutout.svg: exports/floppy-coaster-panel-without-cutout.scad ${MAIN_SOURCE_FILE}
+exports/${NAME}-panel-without-cutout.svg: exports/${NAME}-panel-without-cutout.scad ${NAME}.scad
 	openscad -o $@ $<
 
 Bill-of-materials.pdf: Bill-of-materials.ods
