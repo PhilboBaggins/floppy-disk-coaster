@@ -2,6 +2,7 @@ NAME := floppy-coaster
 
 ALL := \
 	exports/${NAME}-stackup.stl \
+	exports/${NAME}-stackup.png \
 	exports/${NAME}-panel-with-cutout.dxf \
 	exports/${NAME}-panel-with-cutout.svg \
 	exports/${NAME}-panel-without-cutout.dxf \
@@ -12,7 +13,7 @@ ALL := \
 
 all: ${ALL}
 
-exports/${NAME}-stackup.stl: exports/${NAME}-stackup.scad ${NAME}.scad
+exports/${NAME}-stackup.stl exports/${NAME}-stackup.png: exports/${NAME}-stackup.scad ${NAME}.scad
 	openscad -o $@ $<
 
 exports/${NAME}-panel-with-cutout.dxf exports/${NAME}-panel-with-cutout.svg: exports/${NAME}-panel-with-cutout.scad ${NAME}.scad
